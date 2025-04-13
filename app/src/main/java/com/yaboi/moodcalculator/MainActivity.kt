@@ -3,7 +3,7 @@ package com.yaboi.moodcalculator
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -151,7 +151,7 @@ class MainActivity : AppCompatActivity() {
 
         val resultMessage = "$emoji\n\n$message"
 
-        val dialog = androidx.appcompat.app.AlertDialog.Builder(this)
+        val dialog = AlertDialog.Builder(this)
             .setTitle("Your Mood Result")
             .setMessage(resultMessage)
             .setCancelable(false)
@@ -165,6 +165,21 @@ class MainActivity : AppCompatActivity() {
         dialog.show()
     }
 
+    private fun showWelcomeDialog() {
+        val dialog = AlertDialog.Builder(this)
+            .setTitle("Welcome to Mood Calculator 😊")
+            .setMessage("Answer a few quick questions to check in on your mood. Ready?")
+            .setCancelable(false)
+            .setPositiveButton("Let's Go!") { _, _ ->
+                showQuestion()
+            }
+            .setNegativeButton("Maybe Later") { _, _ ->
+                finish() // Close the app if user taps 'Maybe Later'
+            }
+            .create()
+
+        dialog.show()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -179,6 +194,7 @@ class MainActivity : AppCompatActivity() {
         answer2.setOnClickListener { handleAnswer(1) }
         answer3.setOnClickListener { handleAnswer(2) }
 
-        showQuestion()
+        // Show welcome pop-up on launch
+        showWelcomeDialog()
     }
 }

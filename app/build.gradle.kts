@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.yaboi.moodcalculator"
+    namespace = "com.yaboi.personalitycalculator" // Change this to match your desired package
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.yaboi.moodcalculator"
+        applicationId = "com.yaboi.personalitycalculator" // Change this to match your desired application ID
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -36,7 +36,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

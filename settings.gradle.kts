@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Mood Calculator"
+rootProject.name = "Personality Calculator"
 include(":app")

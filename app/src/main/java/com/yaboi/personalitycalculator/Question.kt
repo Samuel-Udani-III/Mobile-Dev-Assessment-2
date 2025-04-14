@@ -1,4 +1,4 @@
-package com.yaboi.moodcalculator
+package com.yaboi.personalitycalculator
 
 data class Question(
     val text: String,

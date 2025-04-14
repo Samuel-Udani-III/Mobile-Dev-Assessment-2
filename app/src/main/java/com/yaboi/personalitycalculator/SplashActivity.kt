@@ -1,4 +1,4 @@
-package com.yaboi.moodcalculator
+package com.yaboi.personalitycalculator
 
 import android.content.Intent
 import android.os.Bundle
